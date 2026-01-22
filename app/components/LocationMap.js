@@ -2,8 +2,8 @@ export default function LocationMap() {
   return (
     <div className="card card-hover animate-fade-in">
       <div className="card-content p-6">
-        <div className="mb-6 pb-4 border-b border-gray-200">
-          <h2 className="text-2xl font-bold text-gray-900">Location</h2>
+        <div className="mb-6 pb-4 border-b border-gray-200/60">
+          <h2 className="text-2xl sm:text-3xl font-extrabold bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">Location</h2>
         </div>
         <div className="w-full h-56 bg-gradient-to-br from-slate-100 to-slate-200 rounded-lg relative flex items-center justify-center overflow-hidden mb-5">
         <div className="absolute inset-0 opacity-20" style={{

@@ -47,12 +47,12 @@ export default function CashFlowChart() {
   return (
     <div className="card card-hover animate-fade-in">
       <div className="card-content p-6">
-        <div className="mb-6 pb-4 border-b border-gray-200">
-          <h2 className="text-2xl font-bold text-gray-900">Cash Flow</h2>
+        <div className="mb-6 pb-4 border-b border-gray-200/60">
+          <h2 className="text-2xl sm:text-3xl font-extrabold bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">Cash Flow</h2>
         </div>
         <div className="bg-gray-50 rounded-lg p-5">
           <ResponsiveContainer width="100%" height={420}>
-            <ComposedChart data={cashFlowData} margin={{ top: 5, right: 30, left: 20, bottom: 80 }}>
+            <ComposedChart data={cashFlowData} margin={{ top: 5, right: 50, left: 60, bottom: 80 }}>
               <CartesianGrid strokeDasharray="3 3" stroke="#e0e0e0" />
               <XAxis 
                 dataKey="month" 
@@ -63,16 +63,20 @@ export default function CashFlowChart() {
               />
               <YAxis 
                 yAxisId="left"
-                label={{ value: '$', angle: -90, position: 'insideLeft', style: { fontWeight: 'bold' } }}
+                label={{ value: 'Monthly Cash Flow ($)', angle: -90, position: 'insideLeft', offset: -10, style: { textAnchor: 'middle', fontWeight: 'bold', fontSize: '12px' } }}
                 domain={[0, 3900000]}
-                style={{ fontSize: '12px' }}
+                tickFormatter={(value) => `$${(value / 1000000).toFixed(1)}M`}
+                style={{ fontSize: '11px' }}
+                width={55}
               />
               <YAxis 
                 yAxisId="right"
                 orientation="right"
-                label={{ value: '$ Cumulative', angle: 90, position: 'insideRight', style: { fontWeight: 'bold' } }}
+                label={{ value: 'Cumulative ($)', angle: 90, position: 'insideRight', offset: -10, style: { textAnchor: 'middle', fontWeight: 'bold', fontSize: '12px' } }}
                 domain={[0, 60000000]}
-                style={{ fontSize: '12px' }}
+                tickFormatter={(value) => `$${(value / 1000000).toFixed(0)}M`}
+                style={{ fontSize: '11px' }}
+                width={55}
               />
               <Tooltip 
                 contentStyle={{ 

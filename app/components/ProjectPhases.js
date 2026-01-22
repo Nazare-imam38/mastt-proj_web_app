@@ -62,8 +62,8 @@ export default function ProjectPhases() {
   return (
     <div className="card card-hover animate-fade-in">
       <div className="card-content p-6">
-        <div className="mb-6 pb-4 border-b border-gray-200">
-          <h2 className="text-2xl font-bold text-gray-900">Project Phases</h2>
+        <div className="mb-6 pb-4 border-b border-gray-200/60">
+          <h2 className="text-2xl sm:text-3xl font-extrabold bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">Project Phases</h2>
         </div>
       
       <div className="relative">
@@ -77,16 +77,16 @@ export default function ProjectPhases() {
         <div className="relative h-40 bg-gradient-to-br from-gray-50 to-gray-100 rounded-xl p-5 border border-gray-200 shadow-inner">
           <div className="flex items-center h-full relative">
             {phasesWithPosition.map((phase, index) => (
-              <div
-                key={index}
+                <div
+                  key={index}
                 className={`bg-gradient-to-r ${phase.gradient} h-16 rounded-lg flex items-center justify-center text-white text-sm font-bold absolute shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 border-2 border-white/50 z-0`}
-                style={{
+                  style={{
                   left: `${phase.left}%`,
-                  width: `${phase.width}%`,
-                }}
-              >
-                {phase.name}
-              </div>
+                    width: `${phase.width}%`,
+                  }}
+                >
+                  {phase.name}
+                </div>
             ))}
 
             {/* Today Line */}

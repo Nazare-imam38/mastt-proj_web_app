@@ -16,14 +16,14 @@ import CashFlowChart from './components/CashFlowChart'
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-gray-50">
+    <main className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-gray-50">
       <ProjectHeader />
       
-      <div className="max-w-[1920px] mx-auto px-3 sm:px-4 md:px-6 lg:px-8 py-4 sm:py-6">
-        <div className="grid grid-cols-12 gap-3 sm:gap-4 md:gap-6">
+      <div className="max-w-[1920px] mx-auto px-3 sm:px-4 md:px-6 lg:px-8 py-6 sm:py-8 md:py-10">
+        <div className="grid grid-cols-12 gap-4 sm:gap-5 md:gap-6 lg:gap-7">
           
           {/* Overview Section */}
-          <section id="overview" className="col-span-12 grid grid-cols-12 gap-3 sm:gap-4 md:gap-6 mb-6 sm:mb-8 md:mb-12">
+          <section id="overview" className="col-span-12 grid grid-cols-12 gap-4 sm:gap-5 md:gap-6 lg:gap-7 mb-8 sm:mb-10 md:mb-12">
             {/* Project Description - Takes 2/3 width on large, full on small */}
             <div className="col-span-12 lg:col-span-8">
               <ProjectDescription />
@@ -46,10 +46,13 @@ export default function Home() {
           </section>
 
           {/* Budget Section */}
-          <section id="budget" className="col-span-12 grid grid-cols-12 gap-3 sm:gap-4 md:gap-6 mb-6 sm:mb-8 md:mb-12">
-            <div className="col-span-12 mb-4 sm:mb-6">
-              <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-1 sm:mb-2">Budget & Financials</h2>
-              <p className="text-sm sm:text-base text-gray-600">Financial overview and budget analysis</p>
+          <section id="budget" className="col-span-12 grid grid-cols-12 gap-4 sm:gap-5 md:gap-6 lg:gap-7 mb-8 sm:mb-10 md:mb-12">
+            <div className="col-span-12 mb-6 sm:mb-8">
+              <div className="flex items-center gap-3 mb-3">
+                <div className="h-1 w-12 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full"></div>
+                <h2 className="text-3xl sm:text-4xl font-extrabold bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 bg-clip-text text-transparent">Budget & Financials</h2>
+              </div>
+              <p className="text-base sm:text-lg text-gray-600 ml-16">Financial overview and budget analysis</p>
             </div>
             
             {/* Budget Overview - Full width */}
@@ -74,10 +77,13 @@ export default function Home() {
           </section>
 
           {/* Schedule Section */}
-          <section id="schedule" className="col-span-12 grid grid-cols-12 gap-3 sm:gap-4 md:gap-6 mb-6 sm:mb-8 md:mb-12">
-            <div className="col-span-12 mb-4 sm:mb-6">
-              <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-1 sm:mb-2">Schedule & Timeline</h2>
-              <p className="text-sm sm:text-base text-gray-600">Project milestones and phase timeline</p>
+          <section id="schedule" className="col-span-12 grid grid-cols-12 gap-4 sm:gap-5 md:gap-6 lg:gap-7 mb-8 sm:mb-10 md:mb-12">
+            <div className="col-span-12 mb-6 sm:mb-8">
+              <div className="flex items-center gap-3 mb-3">
+                <div className="h-1 w-12 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full"></div>
+                <h2 className="text-3xl sm:text-4xl font-extrabold bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 bg-clip-text text-transparent">Schedule & Timeline</h2>
+              </div>
+              <p className="text-base sm:text-lg text-gray-600 ml-16">Project milestones and phase timeline</p>
             </div>
             
             {/* Schedule Worm - Full width */}
@@ -92,19 +98,25 @@ export default function Home() {
           </section>
 
           {/* Risks Section */}
-          <section id="risks" className="col-span-12 mb-6 sm:mb-8 md:mb-12">
-            <div className="mb-4 sm:mb-6">
-              <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-1 sm:mb-2">Risk Management</h2>
-              <p className="text-sm sm:text-base text-gray-600">Risk assessment and monitoring</p>
+          <section id="risks" className="col-span-12 mb-8 sm:mb-10 md:mb-12">
+            <div className="mb-6 sm:mb-8">
+              <div className="flex items-center gap-3 mb-3">
+                <div className="h-1 w-12 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full"></div>
+                <h2 className="text-3xl sm:text-4xl font-extrabold bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 bg-clip-text text-transparent">Risk Management</h2>
+              </div>
+              <p className="text-base sm:text-lg text-gray-600 ml-16">Risk assessment and monitoring</p>
             </div>
             <RiskCharts />
           </section>
 
           {/* Cash Flow Section */}
-          <section id="cashflow" className="col-span-12 mb-6 sm:mb-8 md:mb-12">
-            <div className="mb-4 sm:mb-6">
-              <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-1 sm:mb-2">Cash Flow Analysis</h2>
-              <p className="text-sm sm:text-base text-gray-600">Financial flow and cumulative tracking</p>
+          <section id="cashflow" className="col-span-12 mb-8 sm:mb-10 md:mb-12">
+            <div className="mb-6 sm:mb-8">
+              <div className="flex items-center gap-3 mb-3">
+                <div className="h-1 w-12 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full"></div>
+                <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900 drop-shadow-sm">Cash Flow Analysis</h2>
+              </div>
+              <p className="text-base sm:text-lg text-gray-600 ml-16">Financial flow and cumulative tracking</p>
             </div>
             <CashFlowChart />
           </section>
@@ -112,10 +124,10 @@ export default function Home() {
       </div>
 
       {/* Footer */}
-      <footer className="bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 text-white text-center py-4 sm:py-6 mt-8 sm:mt-12 border-t border-gray-700">
+      <footer className="bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 text-white text-center py-6 sm:py-8 mt-12 sm:mt-16 border-t border-gray-700/50 backdrop-blur-sm">
         <div className="max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-xs sm:text-sm font-medium">
-            POWERED BY <span className="font-extrabold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent text-sm sm:text-base">mastt</span>
+          <p className="text-sm sm:text-base font-medium">
+            POWERED BY <span className="font-extrabold bg-gradient-to-r from-blue-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent text-base sm:text-lg hover:scale-105 transition-transform duration-300 inline-block">mastt</span>
           </p>
         </div>
       </footer>

@@ -65,8 +65,8 @@ export default function BudgetOverview() {
   return (
     <div className="card card-hover animate-fade-in">
       <div className="card-content p-6">
-        <div className="mb-6 pb-4 border-b border-gray-200">
-          <h2 className="text-2xl font-bold text-gray-900">Budget Overview</h2>
+        <div className="mb-6 pb-4 border-b border-gray-200/60">
+          <h2 className="text-2xl sm:text-3xl font-extrabold bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">Budget Overview</h2>
         </div>
         <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
           {budgetItems.map((item, index) => (
