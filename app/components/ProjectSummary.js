@@ -44,18 +44,18 @@ export default function ProjectSummary() {
 
   return (
     <div className="card card-hover animate-fade-in">
-      <div className="card-content p-6">
-        <div className="mb-6 pb-4 border-b border-gray-200/60">
-          <h2 className="text-2xl sm:text-3xl font-extrabold bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">Health</h2>
+      <div className="card-content p-4 sm:p-6">
+        <div className="mb-4 sm:mb-6 pb-3 sm:pb-4 border-b border-gray-200/60">
+          <h2 className="text-xl sm:text-2xl md:text-3xl font-extrabold bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">Health</h2>
         </div>
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-2 gap-3 sm:gap-4">
           {indicators.map((indicator, index) => (
             <div key={index} className="text-center">
-              <div className={`w-16 h-16 bg-gradient-to-br ${indicator.color} rounded-lg mx-auto mb-3 flex items-center justify-center shadow-sm text-white`}>
-                {indicator.icon}
+              <div className={`w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-gradient-to-br ${indicator.color} rounded-lg mx-auto mb-2 sm:mb-3 flex items-center justify-center shadow-sm text-white`}>
+                <div className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8">{indicator.icon}</div>
               </div>
-              <div className="text-sm font-semibold text-gray-900 mb-1">{indicator.name}</div>
-              <div className={`text-xs px-2 py-1 rounded-full inline-block ${
+              <div className="text-xs sm:text-sm font-semibold text-gray-900 mb-1">{indicator.name}</div>
+              <div className={`text-[10px] sm:text-xs px-2 py-0.5 sm:py-1 rounded-full inline-block ${
                 indicator.status === 'good' ? 'bg-emerald-50 text-emerald-700' : 'bg-amber-50 text-amber-700'
               }`}>
                 {indicator.status === 'good' ? 'Good' : 'Warning'}

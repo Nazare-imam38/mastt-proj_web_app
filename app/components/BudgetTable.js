@@ -18,23 +18,23 @@ export default function BudgetTable() {
 
   return (
     <div className="card card-hover animate-fade-in">
-      <div className="card-content p-6">
-        <div className="mb-6 pb-4 border-b border-gray-200/60">
-          <h2 className="text-2xl sm:text-3xl font-extrabold bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">Budget vs FFC Table</h2>
+      <div className="card-content p-4 sm:p-6">
+        <div className="mb-4 sm:mb-6 pb-3 sm:pb-4 border-b border-gray-200/60">
+          <h2 className="text-xl sm:text-2xl md:text-3xl font-extrabold bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">Budget vs FFC Table</h2>
         </div>
-        <div className="overflow-x-auto rounded-lg border border-gray-200">
-          <table className="w-full border-collapse">
+        <div className="overflow-x-auto rounded-lg border border-gray-200 -mx-2 sm:mx-0">
+          <table className="w-full border-collapse min-w-[400px]">
             <thead>
               <tr className="bg-gray-50 border-b border-gray-200">
-                <th className="text-left py-3 px-6 font-semibold text-gray-700 text-sm">Name</th>
-                <th className="text-right py-3 px-6 font-semibold text-gray-700 text-sm">Amount</th>
+                <th className="text-left py-2 sm:py-3 px-3 sm:px-6 font-semibold text-gray-700 text-xs sm:text-sm">Name</th>
+                <th className="text-right py-2 sm:py-3 px-3 sm:px-6 font-semibold text-gray-700 text-xs sm:text-sm">Amount</th>
               </tr>
             </thead>
             <tbody>
               {budgetData.map((row, index) => (
                 <tr key={index} className="border-b border-gray-100 hover:bg-gray-50 transition-colors">
-                  <td className="py-3 px-6 text-gray-700 font-medium text-sm">{row.name}</td>
-                  <td className={`py-3 px-6 text-right font-semibold text-sm ${
+                  <td className="py-2 sm:py-3 px-3 sm:px-6 text-gray-700 font-medium text-xs sm:text-sm">{row.name}</td>
+                  <td className={`py-2 sm:py-3 px-3 sm:px-6 text-right font-semibold text-xs sm:text-sm ${
                     row.isVariance && row.isPositive ? 'text-emerald-600' : 'text-gray-900'
                   }`}>
                     {formatCurrency(row.amount)}

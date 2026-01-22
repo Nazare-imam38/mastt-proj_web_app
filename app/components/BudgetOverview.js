@@ -64,19 +64,21 @@ export default function BudgetOverview() {
 
   return (
     <div className="card card-hover animate-fade-in">
-      <div className="card-content p-6">
-        <div className="mb-6 pb-4 border-b border-gray-200/60">
-          <h2 className="text-2xl sm:text-3xl font-extrabold bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">Budget Overview</h2>
+      <div className="card-content p-4 sm:p-6">
+        <div className="mb-4 sm:mb-6 pb-3 sm:pb-4 border-b border-gray-200/60">
+          <h2 className="text-xl sm:text-2xl md:text-3xl font-extrabold bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">Budget Overview</h2>
         </div>
-        <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2 sm:gap-3">
           {budgetItems.map((item, index) => (
             <div
               key={index}
-              className={`bg-gradient-to-br ${item.gradient} text-white p-4 rounded-lg text-center shadow-sm`}
+              className={`bg-gradient-to-br ${item.gradient} text-white p-3 sm:p-4 rounded-lg text-center shadow-sm`}
             >
-              <div className="mb-2 flex justify-center">{item.icon}</div>
-              <div className="text-xs font-semibold uppercase tracking-wide opacity-90 mb-1.5">{item.label}</div>
-              <div className="text-xl font-bold">{item.amount}</div>
+              <div className="mb-1.5 sm:mb-2 flex justify-center">
+                <div className="w-5 h-5 sm:w-6 sm:h-6">{item.icon}</div>
+              </div>
+              <div className="text-[10px] sm:text-xs font-semibold uppercase tracking-wide opacity-90 mb-1 sm:mb-1.5">{item.label}</div>
+              <div className="text-base sm:text-lg md:text-xl font-bold">{item.amount}</div>
             </div>
           ))}
         </div>

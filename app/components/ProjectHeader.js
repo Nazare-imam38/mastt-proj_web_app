@@ -22,20 +22,20 @@ export default function ProjectHeader() {
       </div>
       
       {/* Main Header Content */}
-      <div className="max-w-[1920px] mx-auto px-3 sm:px-4 md:px-6 lg:px-8 py-3 sm:py-4">
-        <div className="flex items-center justify-between gap-4">
+      <div className="max-w-[1920px] mx-auto px-3 sm:px-4 md:px-6 lg:px-8 py-2 sm:py-3 md:py-4">
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-2 sm:gap-4">
           {/* Logo */}
-          <div className="text-2xl sm:text-3xl font-extrabold bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-500 bg-clip-text text-transparent flex-shrink-0 hover:scale-105 transition-transform duration-300 cursor-pointer">
+          <div className="text-xl sm:text-2xl md:text-3xl font-extrabold bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-500 bg-clip-text text-transparent flex-shrink-0 hover:scale-105 transition-transform duration-300 cursor-pointer order-1 sm:order-none">
             mastt
           </div>
           
           {/* Navbar in the center */}
-          <div className="flex-1 flex justify-center">
+          <div className="flex-1 flex justify-center w-full sm:w-auto order-2 sm:order-none">
             <Navbar />
           </div>
           
-          {/* Spacer to balance layout */}
-          <div className="w-[120px] sm:w-[140px] flex-shrink-0"></div>
+          {/* Spacer to balance layout - hidden on mobile */}
+          <div className="hidden sm:block w-[120px] md:w-[140px] flex-shrink-0"></div>
         </div>
       </div>
     </header>

@@ -147,26 +147,26 @@ export default function ScheduleWorm() {
 
   return (
     <div className="card card-hover animate-fade-in">
-      <div className="card-content p-6">
-        <div className="mb-6 pb-4 border-b border-gray-200/60">
-          <h2 className="text-2xl sm:text-3xl font-extrabold bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">Schedule Worm</h2>
+      <div className="card-content p-4 sm:p-6">
+        <div className="mb-4 sm:mb-6 pb-3 sm:pb-4 border-b border-gray-200/60">
+          <h2 className="text-xl sm:text-2xl md:text-3xl font-extrabold bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">Schedule Worm</h2>
         </div>
-      <div className="overflow-x-auto pb-4">
-        <div className="flex space-x-6 min-w-max">
+      <div className="overflow-x-auto pb-4 -mx-2 sm:mx-0">
+        <div className="flex space-x-4 sm:space-x-6 min-w-max px-2 sm:px-0">
           {milestones.map((milestone, index) => (
-            <div key={index} className="flex flex-col items-center min-w-[200px] group">
-              <div className="flex items-center w-full mb-3">
-                <div className={`w-16 h-16 bg-gradient-to-br ${getStatusGradient(milestone.status)} rounded-full flex items-center justify-center text-white shadow-lg group-hover:shadow-2xl transform group-hover:scale-110 transition-all duration-300 border-4 border-white z-10 relative`}>
-                  {milestone.icon}
+            <div key={index} className="flex flex-col items-center min-w-[160px] sm:min-w-[180px] md:min-w-[200px] group">
+              <div className="flex items-center w-full mb-2 sm:mb-3">
+                <div className={`w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-gradient-to-br ${getStatusGradient(milestone.status)} rounded-full flex items-center justify-center text-white shadow-lg group-hover:shadow-2xl transform group-hover:scale-110 transition-all duration-300 border-2 sm:border-4 border-white z-10 relative`}>
+                  <div className="w-5 h-5 sm:w-6 sm:h-6">{milestone.icon}</div>
                 </div>
                 {index < milestones.length - 1 && (
-                  <div className={`flex-1 h-2 bg-gradient-to-r ${getStatusGradient(milestone.status)} mx-3 rounded-full shadow-sm`}></div>
+                  <div className={`flex-1 h-1.5 sm:h-2 bg-gradient-to-r ${getStatusGradient(milestone.status)} mx-2 sm:mx-3 rounded-full shadow-sm`}></div>
                 )}
               </div>
-              <div className="text-center bg-gray-50 rounded-xl p-4 w-full border border-gray-200 group-hover:bg-blue-50 transition-colors">
-                <div className="text-sm font-bold text-gray-800 mb-2 leading-tight">{milestone.name}</div>
-                <div className="text-xs text-gray-600 mb-2 font-medium">{milestone.date}</div>
-                <div className={`text-xs font-semibold px-3 py-1 rounded-full inline-block bg-gradient-to-r ${getStatusGradient(milestone.status)} text-white shadow-sm`}>
+              <div className="text-center bg-gray-50 rounded-xl p-3 sm:p-4 w-full border border-gray-200 group-hover:bg-blue-50 transition-colors">
+                <div className="text-xs sm:text-sm font-bold text-gray-800 mb-1.5 sm:mb-2 leading-tight">{milestone.name}</div>
+                <div className="text-[10px] sm:text-xs text-gray-600 mb-1.5 sm:mb-2 font-medium">{milestone.date}</div>
+                <div className={`text-[10px] sm:text-xs font-semibold px-2 sm:px-3 py-0.5 sm:py-1 rounded-full inline-block bg-gradient-to-r ${getStatusGradient(milestone.status)} text-white shadow-sm`}>
                   {milestone.phase}
                 </div>
               </div>

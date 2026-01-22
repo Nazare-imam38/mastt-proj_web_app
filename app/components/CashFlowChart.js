@@ -46,37 +46,38 @@ export default function CashFlowChart() {
 
   return (
     <div className="card card-hover animate-fade-in">
-      <div className="card-content p-6">
-        <div className="mb-6 pb-4 border-b border-gray-200/60">
-          <h2 className="text-2xl sm:text-3xl font-extrabold bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">Cash Flow</h2>
+      <div className="card-content p-4 sm:p-6">
+        <div className="mb-4 sm:mb-6 pb-3 sm:pb-4 border-b border-gray-200/60">
+          <h2 className="text-xl sm:text-2xl md:text-3xl font-extrabold bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">Cash Flow</h2>
         </div>
-        <div className="bg-gray-50 rounded-lg p-5">
-          <ResponsiveContainer width="100%" height={420}>
-            <ComposedChart data={cashFlowData} margin={{ top: 5, right: 50, left: 60, bottom: 80 }}>
+        <div className="bg-gray-50 rounded-lg p-3 sm:p-4 md:p-5">
+          <ResponsiveContainer width="100%" height={350}>
+            <ComposedChart data={cashFlowData} margin={{ top: 5, right: 20, left: 40, bottom: 60 }}>
               <CartesianGrid strokeDasharray="3 3" stroke="#e0e0e0" />
               <XAxis 
                 dataKey="month" 
                 angle={-45}
                 textAnchor="end"
-                height={100}
-                style={{ fontSize: '11px', fontWeight: '500' }}
+                height={80}
+                interval="preserveStartEnd"
+                style={{ fontSize: '9px', fontWeight: '500' }}
               />
               <YAxis 
                 yAxisId="left"
-                label={{ value: 'Monthly Cash Flow ($)', angle: -90, position: 'insideLeft', offset: -10, style: { textAnchor: 'middle', fontWeight: 'bold', fontSize: '12px' } }}
+                label={{ value: 'Monthly ($)', angle: -90, position: 'insideLeft', offset: -5, style: { textAnchor: 'middle', fontWeight: 'bold', fontSize: '10px' } }}
                 domain={[0, 3900000]}
                 tickFormatter={(value) => `$${(value / 1000000).toFixed(1)}M`}
-                style={{ fontSize: '11px' }}
-                width={55}
+                style={{ fontSize: '9px' }}
+                width={40}
               />
               <YAxis 
                 yAxisId="right"
                 orientation="right"
-                label={{ value: 'Cumulative ($)', angle: 90, position: 'insideRight', offset: -10, style: { textAnchor: 'middle', fontWeight: 'bold', fontSize: '12px' } }}
+                label={{ value: 'Cumulative ($)', angle: 90, position: 'insideRight', offset: -5, style: { textAnchor: 'middle', fontWeight: 'bold', fontSize: '10px' } }}
                 domain={[0, 60000000]}
                 tickFormatter={(value) => `$${(value / 1000000).toFixed(0)}M`}
-                style={{ fontSize: '11px' }}
-                width={55}
+                style={{ fontSize: '9px' }}
+                width={40}
               />
               <Tooltip 
                 contentStyle={{ 
@@ -84,11 +85,12 @@ export default function CashFlowChart() {
                   border: '1px solid #e5e7eb', 
                   borderRadius: '12px',
                   boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1)',
-                  padding: '12px'
+                  padding: '8px',
+                  fontSize: '11px'
                 }}
                 formatter={(value) => `$${value.toLocaleString()}`}
               />
-              <Legend wrapperStyle={{ paddingTop: '20px' }} />
+              <Legend wrapperStyle={{ paddingTop: '15px', fontSize: '11px' }} />
               <Bar yAxisId="left" dataKey="paid" stackId="a" fill="#10b981" name="Paid" radius={[0, 0, 0, 0]} />
               <Bar yAxisId="left" dataKey="contract" stackId="a" fill="#3b82f6" name="Contract" radius={[0, 0, 0, 0]} />
               <Bar yAxisId="left" dataKey="uncommitted" stackId="a" fill="#1e293b" name="Uncommitted" radius={[0, 0, 0, 0]} />
@@ -100,9 +102,9 @@ export default function CashFlowChart() {
                 type="monotone" 
                 dataKey="cumulative" 
                 stroke="#f97316" 
-                strokeWidth={4}
-                dot={{ r: 5, fill: '#f97316', strokeWidth: 2, stroke: '#fff' }}
-                activeDot={{ r: 7 }}
+                strokeWidth={3}
+                dot={{ r: 3, fill: '#f97316', strokeWidth: 2, stroke: '#fff' }}
+                activeDot={{ r: 5 }}
                 name="Cumulative Overlay"
               />
             </ComposedChart>

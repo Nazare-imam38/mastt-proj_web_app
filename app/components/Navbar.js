@@ -95,18 +95,18 @@ export default function Navbar() {
   return (
     <nav className={`transition-all duration-300 ${isScrolled ? '' : ''}`}>
       <div className="w-full">
-        <div className="flex items-center justify-center space-x-1 sm:space-x-2 overflow-x-auto scrollbar-hide">
+        <div className="flex items-center justify-center space-x-1 sm:space-x-2 overflow-x-auto scrollbar-hide pb-1 sm:pb-0">
           {navItems.map((item) => (
             <button
               key={item.id}
               onClick={() => scrollToSection(item.id)}
-              className={`flex items-center space-x-1.5 sm:space-x-2 px-3 sm:px-5 py-2.5 sm:py-3 text-xs sm:text-sm font-semibold transition-all duration-300 whitespace-nowrap flex-shrink-0 rounded-lg ${
+              className={`flex items-center space-x-1 sm:space-x-1.5 md:space-x-2 px-2 sm:px-3 md:px-5 py-2 sm:py-2.5 md:py-3 text-[10px] sm:text-xs md:text-sm font-semibold transition-all duration-300 whitespace-nowrap flex-shrink-0 rounded-lg ${
                 activeSection === item.id
                   ? 'text-blue-600 bg-gradient-to-br from-blue-50 to-blue-100/50 border border-blue-200/50 shadow-sm'
                   : 'text-gray-600 hover:text-blue-600 hover:bg-gray-50/80 border border-transparent hover:border-gray-200/50 hover:shadow-sm'
               }`}
             >
-              <span className={`w-4 h-4 sm:w-5 sm:h-5 transition-transform duration-300 ${activeSection === item.id ? 'scale-110' : ''}`}>{item.icon}</span>
+              <span className={`w-3.5 h-3.5 sm:w-4 sm:h-4 md:w-5 md:h-5 transition-transform duration-300 ${activeSection === item.id ? 'scale-110' : ''}`}>{item.icon}</span>
               <span className="hidden sm:inline">{item.label}</span>
               <span className="sm:hidden">{item.label.split(' ')[0]}</span>
             </button>
